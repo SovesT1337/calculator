@@ -33,7 +33,7 @@ string cute(string str){
         }
     }
     //вставим знаки умножения перед скобками, если это нужно
-    while ((str[str.find('(') - 1] != ' ') && (str[str.find('(') - 1] != '(')){
+    while ((str.find('(') != -1) & (str[str.find('(') - 1] != ' ') && (str[str.find('(') - 1] != '(')){
         str.insert(str.find('('), " * ");
     }
     return str;

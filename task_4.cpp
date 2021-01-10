@@ -25,5 +25,16 @@ bool mistake(const string& str){
         }
     }
 
+    st2 = str;
+    while (!st2.empty()){
+        int n = 0;
+        string st = st2.substr(0, st2.find(' '));
+        st2.erase(0, st2.find(' ') + 1);
+        for (char i : st){
+            if (i == '.') n++;
+        }
+        if (n > 1) return true;
+    }
+
     return false;
 }
