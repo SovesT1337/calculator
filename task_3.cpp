@@ -4,13 +4,32 @@
 
 #include "Tasks.hpp"
 
-bool fn(primer a){
-    return (a.Znak == '*');
-}
+float schet(vector<primer> pr){
 
-int schet(vector<primer> pr){
-    auto it = find(pr.begin(), pr.end(), fn);
-    int n = 0;
+    while (find_if(pr.begin(), pr.end(),  [](primer a) {return (a.Znak == '*');}) != pr.end()){
+        auto it = find_if(pr.begin(), pr.end(), [](primer a) {return (a.Znak == '*');}), it2 = it + 1;
+        it2->Chifra *= it->Chifra;
+        pr.erase(it);
+    }
 
+    while (find_if(pr.begin(), pr.end(),  [](primer a) {return (a.Znak == '/');}) != pr.end()){
+        auto it = find_if(pr.begin(), pr.end(), [](primer a) {return (a.Znak == '/');}), it2 = it + 1;
+        it2->Chifra /= it->Chifra;
+        pr.erase(it);
+    }
+
+    while (find_if(pr.begin(), pr.end(),  [](primer a) {return (a.Znak == '+');}) != pr.end()){
+        auto it = find_if(pr.begin(), pr.end(), [](primer a) {return (a.Znak == '+');}), it2 = it + 1;
+        it2->Chifra += it->Chifra;
+        pr.erase(it);
+    }
+
+    while (find_if(pr.begin(), pr.end(),  [](primer a) {return (a.Znak == '-');}) != pr.end()){
+        auto it = find_if(pr.begin(), pr.end(), [](primer a) {return (a.Znak == '-');}), it2 = it + 1;
+        it2->Chifra -= it->Chifra;
+        pr.erase(it);
+    }
+
+    float n = pr[0].Chifra;
     return n;
 }

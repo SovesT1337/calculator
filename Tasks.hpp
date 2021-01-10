@@ -28,4 +28,4 @@ string cute(string );
 
 vector<primer> magic(const string& str);
 
-int schet(vector<primer>);
+float schet(vector<primer>);

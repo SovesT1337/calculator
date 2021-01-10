@@ -6,11 +6,10 @@ int main() {
     getline(cin, str);
     //редактируем строку чтобы с ней можно было работать
     str = cute(str);
-
-    cout << str << endl;
     //перенесем в массив структур
     vector<primer> Primer = magic(str);
     //посчитаем
     int n = schet(Primer);
+    cout << str << n << endl;
     return 0;
 }
