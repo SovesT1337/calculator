@@ -33,3 +33,5 @@ vector<primer> magic(const string&);
 float schet(vector<primer>);
 
 bool mistake(const string&);
+
+string scob(string);

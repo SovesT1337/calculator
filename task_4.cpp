@@ -14,5 +14,16 @@ bool mistake(const string& str){
         return true;
     }
 
+    if(str.find("()") != -1) {
+        return true;
+    }
+
+    string st2 = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*_?<>{}[]~`№;";
+    for (char i : str){
+        if (st2.find(i) != -1){
+            return true;
+        }
+    }
+
     return false;
 }
