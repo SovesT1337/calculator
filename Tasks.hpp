@@ -13,6 +13,8 @@ using std::cout;
 using std::endl;
 using std::vector;
 using std::find;
+using std::reverse;
+using std::to_string;
 
 #ifndef CALCULATOR_TASKS_HPP
 #define CALCULATOR_TASKS_HPP
@@ -24,8 +26,10 @@ struct primer{
     char Znak;
 };
 
-string cute(string );
+string cute(string);
 
-vector<primer> magic(const string& str);
+vector<primer> magic(const string&);
 
 float schet(vector<primer>);
+
+bool mistake(const string&);

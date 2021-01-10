@@ -13,6 +13,10 @@ string cute(string str){
     while (str.find(' ') != -1){
         str.erase(str.find(' '), 1);
     }
+    //заменим запятые на точки
+    while (str.find(',') != -1){
+        str[str.find(',')] = '.';
+    }
     //вставим знаки разделители
     int n = str.size();
     for(unsigned int j = 0; j < n; j++){
@@ -24,9 +28,6 @@ string cute(string str){
             str.insert(j, " ");
         }
     }
-    //проверим на корректность ввода
-    if(str.find("  ") != -1){
-        cout << "V primere oshibka" << endl;
-    }
+
     return str;
 }
